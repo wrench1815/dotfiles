@@ -299,3 +299,21 @@ awful.keyboard.append_global_keybindings{
       end
    },
 }
+
+-- Brightness control
+awful.keyboard.append_global_keybindings{
+   awful.key{
+      modifiers   =  { },
+      key         =  'XF86MonBrightnessUp',
+      description =  'increase brightness',
+      group       =  'system',
+      on_press    =  function() awful.util.spawn('brightnessctl set +5%') end,
+   },
+   awful.key{
+      modifiers   =  { },
+      key         =  'XF86MonBrightnessDown',
+      description =  'decrease brightness',
+      group       =  'system',
+      on_press    =  function() awful.util.spawn('brightnessctl set 5%-') end,
+   },
+}
