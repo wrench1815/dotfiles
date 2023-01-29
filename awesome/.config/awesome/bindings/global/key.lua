@@ -18,13 +18,13 @@ awful.keyboard.append_global_keybindings{
       group       = 'awesome',
       on_press    = hotkeys_popup.show_help,
    },
-   awful.key{
-      modifiers   = {mod.super},
-      key         = 'w',
-      description = 'show main menu',
-      group       = 'awesome',
-      on_press    = function() widgets.mainmenu:show() end,
-   },
+   -- awful.key{
+   --    modifiers   = {mod.super},
+   --    key         = 'w',
+   --    description = 'show main menu',
+   --    group       = 'awesome',
+   --    on_press    = function() widgets.mainmenu:show() end,
+   -- },
    awful.key{
       modifiers   = {mod.super, mod.ctrl},
       key         = 'r',
@@ -310,10 +310,32 @@ awful.keyboard.append_global_keybindings{
       on_press    =  function() awful.util.spawn('brightnessctl set +5%') end,
    },
    awful.key{
-      modifiers   =  { },
+      modifiers   =  {  },
       key         =  'XF86MonBrightnessDown',
       description =  'decrease brightness',
       group       =  'system',
       on_press    =  function() awful.util.spawn('brightnessctl set 5%-') end,
+   },
+}
+
+-- launch rofi menu
+awful.keyboard.append_global_keybindings{
+   awful.key{
+      modifiers   =  {mod.super},
+      key         =  'w',
+      description =  'show main menu',
+      group       =  'awesome',
+      on_press    =  function() awful.spawn.with_shell('~/.config/rofi/launchers/type-6/launcher.sh') end,
+   },
+}
+
+-- take screenshot with gscreenshot
+awful.keyboard.append_global_keybindings{
+   awful.key{
+      modifiers   =  {  },
+      key         =  'Print',
+      description =  'take a screen shot with gscreenshot',
+      group       =  'system',
+      on_press    =  function() awful.spawn('gscreenshot') end,
    },
 }
