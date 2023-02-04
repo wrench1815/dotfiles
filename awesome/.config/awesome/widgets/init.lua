@@ -9,6 +9,7 @@ local apps = require 'config.apps'
 local mod = require 'bindings.mod'
 
 local batteryarc_widget = require 'widgets.batteryarc.batteryarc'
+local brightness_widget = require 'widgets.brightness.brightness'
 
 _M.awesomemenu = {
     {
@@ -165,7 +166,8 @@ function _M.create_wibox(s)
                     show_current_level = true,
                     show_notification_mode = 'on_click'
                 }), --- batteryarc_widget
-                _M.keyboardlayout,
+                brightness_widget({program = 'brightnessctl'}), -- brightness widget
+                --  _M.keyboardlayout,
                 wibox.widget.systray(),
                 _M.textclock,
                 s.layoutbox
