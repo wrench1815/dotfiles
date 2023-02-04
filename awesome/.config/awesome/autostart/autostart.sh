@@ -10,4 +10,4 @@ run() {
 run nitrogen --restore
 run tilda
 run polkit-dumb-agent
-picom
+run picom
