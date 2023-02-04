@@ -1,21 +1,21 @@
 -- awesome_mode: api-level=4:screen=on
-
 -- load luarocks if installed
 pcall(require, 'luarocks.loader')
 
 -- load theme
-local beautiful = require'beautiful'
-local gears = require'gears'
-beautiful.init(gears.filesystem.get_themes_dir() .. 'default/theme.lua')
+local beautiful = require 'beautiful'
+local gears = require 'gears'
+-- beautiful.init(gears.filesystem.get_themes_dir() .. 'default/theme.lua')
+beautiful.init('~/.config/awesome/themes/nord/theme.lua')
 
 -- load key and mouse bindings
-require'bindings'
+require 'bindings'
 
 -- load rules
-require'rules'
+require 'rules'
 
 -- load signals
-require'signals'
+require 'signals'
 
 -- autostart
-require'autostart'
+require 'autostart'
