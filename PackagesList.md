@@ -13,3 +13,4 @@
 - [connman](https://wiki.archlinux.org/title/ConnMan) network manager
 - [gvfs-mtp](https://archlinux.org/packages/?name=gvfs-mtp) automount android devices
 - [picom](https://github.com/yshui/picom) compositor
+- [betterlockscreen](https://github.com/betterlockscreen/betterlockscreen) lockscreen
